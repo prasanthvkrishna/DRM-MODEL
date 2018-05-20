@@ -1,3 +1,0 @@
-module module_init_parallel
-
-end module module_init_parallel
