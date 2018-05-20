@@ -4,13 +4,6 @@ module module_solver
   use module_drm_fun
 implicit none
 
-! load data first
-! data includes daily data and several hourly data(in this case 3 hourly):
-! Daily: precipitable water(PW),evaportranspiration(ET),precipitation(PP)
-! 3-hourly: u and v
-! thus grid_days(:,:,:,1)=PW(mm), grid_days(:,:,:,2)=ET(mm/3h), grid_days(:,:,:,3)=PP(mm/day)
-! grid_hours(:,:,:,4)=U3(m/s),grid_hours(:,:,:,5)=V3(m/s)
-! modeling date from start_day to end_day, domain from x1,y1 to x2,y2
 contains
 subroutine precipitation_recycling(TCPW,ET,PPT,UW,VW,BCC,regions,dx,dy,nx,ny, start_day,end_day,&
                                    dt,max_tracing,max_iteration,days,spinup,vt,v1,v2,domsize,domainij)
