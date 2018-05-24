@@ -1,0 +1,29 @@
+!Namelist for DRM model
+&DRM
+ PWINDIR	= "/work/dragonstooth/pvk03/WRFOUT_FINAL/HIST/NOIRR/PROCESSED/"
+ ETINDIR	= "/work/dragonstooth/pvk03/WRFOUT_FINAL/HIST/NOIRR/PROCESSED/"
+ PPTINDIR	= "/work/dragonstooth/pvk03/WRFOUT_FINAL/HIST/NOIRR/PROCESSED/"
+ VWINDIR	= "/work/dragonstooth/pvk03/WRFOUT_FINAL/HIST/NOIRR/PROCESSED/"
+ UWINDIR	= "/work/dragonstooth/pvk03/WRFOUT_FINAL/HIST/NOIRR/PROCESSED/"
+ OUTDIR		= "."
+ PWFNAME	= "OBJ1_wrfout_d01_2013-06"
+ ETFNAME	= "OBJ1_wrfout_d01_2013-06"
+ PPTFNAME	= "OBJ1_wrfout_d01_2013-06"
+ VWFNAME	= "OBJ1_wrfout_d01_2013-06"
+ UWFNAME	= "OBJ1_wrfout_d01_2013-06"
+ ZONEFILE	= "/groups/HYCCSIM/geo_em.d01.nc"
+ NX		= 485
+ NY		= 324
+ START_DAY	= 1
+ END_DAY	= 30    !243
+ IYEAR		= 2001
+ REGIONS	= 17
+ DT		= 1800
+ MAX_TRACING	= 1000
+ MAX_ITERATION	= 10
+ SPINUP		= 5
+ VT		= 1
+ DX		= 12000
+ DY		= 12000
+/
+
