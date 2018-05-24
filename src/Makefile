@@ -3,15 +3,15 @@
 ######## EDIT HERE ##########
     # Compiler and Flags
 FC 		= gfortran
-FFLAGS 		= -c
-NETCDF 		= /home/pvk03/local/gcc-5.4/netcdf-4.4.1.1/
+FFLAGS 		= -c #-Wall -fcheck=all
+NETCDF 		= /home/pvk03/Cascades/local/netcdf-4.4.0/
 NETCDFMOD	= -I$(NETCDF)/include
 NETCDFLIB	= -L$(NETCDF)/lib -lnetcdf -lnetcdff
 LINKER		= $(FC) -o
 
 ##################################################
 ######## DON' CHANGE ANYTHING BELOW###############
-OBJS = drm.o module_param.o drmtype.o module_listfile.o module_rd_namelist.o
+OBJS = drm.o module_solver.o module_drm_fun.o module_netcdf_io.o module_param.o drmtype.o module_listfile.o module_rd_namelist.o
 #Programe Name
 DRM = drm.exe
 
@@ -60,7 +60,9 @@ clean:
 	rm -rf $(EXEDIR)/*.exe $(EXEDIR)/*~
 	rm -rf $(VPATH)/*~
 
-drm.o 			: drm.f90 module_netcdf_io.o module_param.o drmtype.o module_listfile.o module_rd_namelist.o
+drm.o 			: drm.f90 module_solver.o module_netcdf_io.o module_param.o drmtype.o module_listfile.o module_rd_namelist.o
+module_solver.o		: module_solver.f90 module_drm_fun.o module_netcdf_io.o module_param.o drmtype.o module_listfile.o module_rd_namelist.o
+module_drm_fun.o 	: module_drm_fun.f90 module_netcdf_io.o module_param.o drmtype.o module_listfile.o module_rd_namelist.o
 module_netcdf_io.o      : module_netcdf_io.f90 module_param.o drmtype.o module_listfile.o module_rd_namelist.o
 module_param.o 		: module_param.f90 drmtype.o module_listfile.o module_rd_namelist.o
 drmtype.o 		: drmtype.f90 module_listfile.o module_rd_namelist.o
