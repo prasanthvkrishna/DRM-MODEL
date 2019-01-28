@@ -68,6 +68,7 @@ subroutine precipitation_recycling(TCPW,ET,PPT,UW,VW,BCC,regions,dx,dy,nx,ny, st
 ! start the daily loop during the chosen duration from start_day to end_day
   print *,'!!!!!!!!!!!!!!!!!!!!!!!!!!!'
   print *,'!!!  Daily Loop Starts  !!!'
+  !!! This section is contributed by Hu, Huancui hhu18@illinois.edu  !!!
   print *,'!!!!!!!!!!!!!!!!!!!!!!!!!!!'
   daily : do day=start_day,end_day
 
